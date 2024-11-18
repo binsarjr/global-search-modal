@@ -36,6 +36,10 @@ class GlobalSearchModal extends Component
         // Early return if the search is empty
         $search = trim($this->search);
 
+        if(empty($search)) {
+            return null;
+        }
+
 
         $results = Filament::getGlobalSearchProvider()->getResults($search);
 
